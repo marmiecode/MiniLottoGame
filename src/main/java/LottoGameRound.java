@@ -6,7 +6,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 
-class LottoGameRound {
+public class LottoGameRound {
     private final Set<Integer> userNumbers;
     private final Set<Integer> lotteryNumbers;
 }
