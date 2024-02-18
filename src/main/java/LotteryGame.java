@@ -18,5 +18,10 @@ public class LotteryGame implements Game {
             lotteryNumbers.add(random.nextInt(MAX_NUMBERS) + 1);
         }
     }
+
+    @Override
+    public void play() {
+
+    }
 }
 
