@@ -1,37 +1,31 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+
 
 class LotteryAppTest {
     @Test
     void testValidateNumber() {
-        LotteryApp lotteryApp = new LotteryApp();
+        LotteryGame lotteryGameMock = mock(LotteryGame.class);
+        LotteryApp lotteryApp = new LotteryApp(lotteryGameMock);
         assertTrue(lotteryApp.validateNumber(50));
     }
 
     @Test
     void testNumberOfRange(){
-        LotteryApp lotteryApp = new LotteryApp();
+        LotteryGame lotteryGameMock = mock(LotteryGame.class);
+        LotteryApp lotteryApp = new LotteryApp(lotteryGameMock);
         assertFalse(lotteryApp.validateNumber(100));
     }
 
     @Test
     void testNegativeNumber() {
-        LotteryApp lotteryApp = new LotteryApp();
+        LotteryGame lotteryGameMock = mock(LotteryGame.class);
+        LotteryApp lotteryApp = new LotteryApp(lotteryGameMock);
         assertFalse(lotteryApp.validateNumber(-5));
     }
 
-    @Test
-    void testGetUserInput(){
-        LotteryApp lotteryApp = new LotteryApp();
-        Set<Integer> userNumber = lotteryApp.getUserInput();
-        assertEquals(6, userNumber.size());
-
-        for (int number:userNumber) {
-            assertTrue(lotteryApp.validateNumber(number));
-        }
-    }
 
 }

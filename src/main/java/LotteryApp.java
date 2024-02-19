@@ -5,7 +5,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 @RequiredArgsConstructor
-public class LotteryApp {
+public class LotteryApp implements Game{
+    private final LotteryGame lotteryGame;
     public Set<Integer> getUserInput() {
         Set<Integer> userNumbers = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +22,15 @@ public class LotteryApp {
         return userNumbers;
 }
 public boolean validateNumber(int number) {
-    return number >= 1 && number <= 99;
+
+        return number >= 1 && number <= 99;
+    }
+
+    @Override
+    public void play() {
+        Set<Integer> userNumbers = getUserInput();
+        lotteryGame.setUserNumbers(userNumbers);
+        lotteryGame.play();
     }
 }
 

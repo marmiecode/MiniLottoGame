@@ -1,14 +1,14 @@
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-@Data
 
+@Data
 public class LotteryGame implements Game {
-    private final Set<Integer> userNumbers;
+    private Set<Integer> userNumbers;
     private final Set<Integer> lotteryNumbers;
     private final static int MAX_NUMBERS = 99;
     private final static int INPUT_NUMBERS = 6;
