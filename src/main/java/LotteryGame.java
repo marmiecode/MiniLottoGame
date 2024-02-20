@@ -35,6 +35,7 @@ public class LotteryGame implements Game {
         } else {
             System.out.println("Niestety nie udało się. Trafiłeś " + matchedNumbers);
         }
+
     }
 
 
